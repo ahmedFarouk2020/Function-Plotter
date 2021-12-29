@@ -4,8 +4,7 @@
 
     These Errors are:
     1. Invalid operator (e.g. `x&4+5/a`)
-    2. Invalid variable (i.e function variable is something other than `x`)
-    3. Invalid function (e.g. x++2 or *x+5)
+    2. Invalid function (e.g. x++2 or *x+5)
 '''
 
 
@@ -41,6 +40,8 @@ class ErrorDB():
         "X value Error: Min value must be greater than max value",
         "X value Error: X Values must be intergers"
     ]
+
+
 
 '''
     Deal with error database (report error, retrieve error)
@@ -90,43 +91,16 @@ class OperatorErrors(ErrorDBHandle):
 
         '''those operators aren't supported in this app
             but python support them (`MethimaticalErrors` might not oppose)
-            so i have to explicitly generate 
-            an error if any of them exist
+            so i have to explicitly generate an error if any of them exist
         '''
         invalid_operators = r"[(!#%_&|.\)]"
         invalidOperatorsInFunction = regex.findall(invalid_operators, function)
         
-        # remove all characters except operators `invalidOperatorsInFunction`
 
         if len(invalidOperatorsInFunction) > 0:
             self.reportError("operator_error")
             print("OperatorERRor report")
 
-        
-            
-
-        
-
-'''
-    detect the variable errors (i.e. ensure that the variable used is X or x)
-'''
-class VariableErrors(ErrorDBHandle):
-    def __init__(self,function: str) -> None:
-        ErrorDBHandle.__init__(self)
-
-        variablesInFunction = regex.findall('[A-Z,a-z]', function)
-        print("+++++++++++++++++++++++++")
-        print(variablesInFunction)
-        if variablesInFunction == []:
-            self.exist_variable = 0
-        # len(list) = count of that variable in the list
-        # so list contains only a repeated one variable
-        elif variablesInFunction.count(variablesInFunction[0]) == len(variablesInFunction):
-
-            self.exist_variable = variablesInFunction[0] # variable exist in the function
-            
-        else:
-            self.reportError("variable_error")
 
 
 
@@ -147,13 +121,23 @@ class MathematicalErrors(ErrorDBHandle):
         
 
 
-
-class ErrorHandling(OperatorErrors,VariableErrors,MathematicalErrors):
+"""
+    the main module in error handling
+"""
+class ErrorHandling(OperatorErrors,MathematicalErrors):
     def __init__(self, function: str) -> None:
         OperatorErrors.__init__(self,function)
         MathematicalErrors.__init__(self,function)
-        # VariableErrors.__init__(self,function)
         print(self.detected_errors)
+
+
+    """
+        detech possible error that might happens in x values
+
+        args:
+            -min_value(str)
+            -max_value(str)
+    """
     def checkXvalues(self, min_value: str, max_value: str):
         try:
             if (int(min_value) >= int(max_value)):
