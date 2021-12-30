@@ -50,5 +50,7 @@ A GUI program that plots arbitrary user-entered function
     cd testing
    python test.py
    ```
-   
-### Snapshots of application -- in --> `snapshots dir` (all run as expected)
+## Notes
+- Snapshots of application -- in --> `snapshots dir` (all run as expected)
+- All testcases are included in `testing dir`
+- Test cases for exit button also included `testing/test_cases(exit).csv`
