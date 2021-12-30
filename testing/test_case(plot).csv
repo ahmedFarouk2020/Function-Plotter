@@ -1,0 +1,27 @@
+Input_Function, Min_value, Max_value, Output
+ ,  ,  , Mathimatical Error: Invalid Function
+w,  ,  , X value Error: X Value Must be interger
+w, 0,  , X value Error: X Value Must be interger
+q,  , 4, X value Error: X Value Must be interger
+x, 5, 0, X value Error: Min value must be greater than max value
+x, 5, 5, X value Error: Min value must be greater than max value
+x+2, -100, 100, Plotted Successfully
+s*2, -100, 100, Plotted Successfully
+p/2, -100, 100, Plotted Successfully
+t-1, -100, 100, Plotted Successfully
+a+s, -100, 100, Invalid variable: Use only one variable throughout the function
+a%1, -100, 100, Invalid Operator: Supported operators are ['+' '-' '*' '/' '^']
+a$1, -100, 100, Mathimatical Error: Invalid Function
+q!1, -100, 100, Invalid Operator: Supported operators are ['+' '-' '*' '/' '^']
+e&1, -100, 100, Invalid Operator: Supported operators are ['+' '-' '*' '/' '^']
+a|5, -100, 100, Invalid Operator: Supported operators are ['+' '-' '*' '/' '^']
+q_, -100, 100, Invalid Operator: Supported operators are ['+' '-' '*' '/' '^']
+q#, -100, 100, Invalid Operator: Supported operators are ['+' '-' '*' '/' '^']
+sin, -100, 100, Invalid variable: Use only one variable throughout the function
+a++1, -100, 100, Plotted Successfully
+ x^2, -100, 100, Plotted Successfully
+*x, -100, 100, Mathimatical Error: Invalid Function
++x, -100, 100, Plotted Successfully
+#x, -100, 100, Invalid Operator: Supported operators are ['+' '-' '*' '/' '^']
+@a, -100, 100, Mathimatical Error: Invalid Function
+x, -10, +10, Plotted Successfully

@@ -13,9 +13,7 @@ class Button():
     def __init__(self,main_window,text,width,height,function,bg=None,fg=None) -> None:
         self.buttonObj = GUI.Button(main_window,text=text,command=function,
             width=width,height=height,background=bg,fg=fg)
-        # self.buttonObj = GUI.Button(main_window,text="text",command=function,
-        # activebackground=activebackground,background=background,font=font,
-        # textvariable=self.variable, width=width, height=height)
+
 
         
 
@@ -27,7 +25,7 @@ class Entry():
         self.variable = GUI.StringVar()
         self.entryObj = GUI.Entry(main_window,width=width,font=font,background=bg, 
         foreground=fg, textvariable=self.variable)
-        print(self.entryObj.configure()['font'])
+        
 
         
         
@@ -66,7 +64,7 @@ class ErrorBox():
 
         # display error
         messagebox.showerror(splitted_msg[0],splitted_msg[1])
-        print(splitted_msg[0],splitted_msg[1])
+
         
 
 
@@ -89,7 +87,7 @@ class App():
         self.mainWindow.iconphoto(False, photo)
 
         self.mainWindow.configure(background="grey")
-        # self.mainWindow.configure()['cursor']='Cursor'
+        
   
 
     def run(self):

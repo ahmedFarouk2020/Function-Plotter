@@ -41,12 +41,4 @@ class Plot():
 
 
 
-        
-
-
-#========= Debugging ================
-# p = Plot("x+x**2")
-
-# p.plotFunction(0, 10)
-
-# close()
+ 

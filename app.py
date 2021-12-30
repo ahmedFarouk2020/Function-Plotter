@@ -19,13 +19,11 @@ class Actions():
 
         # edit data 
         edited_function = Parse(str_function).parse()
-        print(f"edited function:{edited_function}")
         
         # pass data to error handling
         error_object = ErrorHandling(edited_function)
         error_object.checkXvalues(min_value, max_value)
         
-        print(f"detedcted errors: {error_object.detected_errors}")
 
         # check reported errors
         error = error_object.retrieveError()

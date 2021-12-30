@@ -38,7 +38,7 @@ class ErrorDB():
         "Invalid variable: Use only one variable throughout the function",
         "Mathimatical Error: Invalid Function",
         "X value Error: Min value must be greater than max value",
-        "X value Error: X Values must be intergers"
+        "X value Error: X Values must be integers"
     ]
 
 
@@ -99,7 +99,7 @@ class OperatorErrors(ErrorDBHandle):
 
         if len(invalidOperatorsInFunction) > 0:
             self.reportError("operator_error")
-            print("OperatorERRor report")
+           
 
 
 
@@ -111,12 +111,13 @@ class OperatorErrors(ErrorDBHandle):
 class MathematicalErrors(ErrorDBHandle):
     def __init__(self, function: str) -> None:
         ErrorDBHandle.__init__(self)
+
+        # execute the function
         try:
             x = 0
-            print(f'eval: {eval(function)}')
+            eval(function)
         except:
             self.reportError("math_error")
-            print("MathematicalErrors Exception")
 
         
 
@@ -128,7 +129,7 @@ class ErrorHandling(OperatorErrors,MathematicalErrors):
     def __init__(self, function: str) -> None:
         OperatorErrors.__init__(self,function)
         MathematicalErrors.__init__(self,function)
-        print(self.detected_errors)
+        
 
 
     """
@@ -145,53 +146,3 @@ class ErrorHandling(OperatorErrors,MathematicalErrors):
         except:
             self.reportError("str_value_error")
 
-
-    
-# x = 0
-# function = "i^3"       
-# e = ErrorHandling(function)
-# print(e.valid_variable)
-# print(e.exist_variable)
-
-# # check errors first then
-
-# p = Parse(function).editFunction(e.exist_variable, e.valid_variable)
-# print(p)
-# # print(eval(p))
-# import tkinter as GUI
-# from tkinter import messagebox
-# def display(message: str):
-#     if message is None:
-#         return
-#     # split the string
-#     splitted_msg = message.split(': ')
-#     # display error
-#     messagebox.showerror(splitted_msg[0],splitted_msg[1])
-#     print(splitted_msg[0],splitted_msg[1])
-
-#from parse import Parse
-# e = ErrorHandling("2")
-# e.checkXvalues(int("0"), int("10"))
-
-# # edit data (fist step before error handling)
-# p = Parse("2").parse()
-
-# # check on data
-# error = e.retrieveError()
-# print(p)
-# print(e.detected_errors)
-
-# if error != None:
-#     display(error)
-# else:
-
-
-#     from plot import Plot
-#     # plot data
-#     p = Plot(p)
-
-#     p.plotFunction(-100, 100)
-
-# invalid_operators = r"[(!#%_&|.\)]"
-# invalidOperatorsInFunction = regex.findall(invalid_operators, " x^2")
-# print(invalidOperatorsInFunction)

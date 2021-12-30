@@ -26,10 +26,7 @@ class Parse():
     """
     def __checkVarNumInFunction(self):
         variablesInFunction = regex.findall('[A-Z,a-z]', self.__function)
-        print("+++++++++++++++++++++++++")
-        print(variablesInFunction)
-       
-        print(type(len(variablesInFunction)))
+     
         # function has no variables (e.g. F(x)=5)
         if variablesInFunction == []:
             self.__exist_variables = NO_VAR
@@ -40,13 +37,13 @@ class Parse():
         elif variablesInFunction.count(variablesInFunction[0]) is len(variablesInFunction):
 
             self.__exist_variables = variablesInFunction[0] # variable exist in the function
-            print("len(list) = count of that variable in the list")
+            
 
         # the list(variablesInFunction) contains more than one variable
         else:
             ErrorDBHandle().reportError("variable_error")
             self.__reportFlag = REPORT
-            print("variable error reported")
+            
 
     """
         main method that implement the whole logic of parsing
@@ -77,18 +74,8 @@ class Parse():
             # replace each variable with 'x'
             indexOfVariable = self.__function.find(self.__exist_variables)
 
-            print(self.__function.replace(self.__function[indexOfVariable],self.__support_variable))
-
             # replace the existing alpabet with `x`
             return self.__function.replace(self.__function[indexOfVariable],self.__support_variable)
 
 
 
-# invalid_operators = "[(! @ # $ % _)]"
-# invalidOperatorsInFunction = regex.findall(invalid_operators, "2a+*")
-# print(invalidOperatorsInFunction)
-
-# OperatorErrors("s\a")
-
-# l = [1,2,3,5]
-# print(l.pop(2))

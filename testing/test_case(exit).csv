@@ -1,0 +1,4 @@
+Test case, Output 
+Press exit before pressing plot, Exit successfully
+Press exit after pressing plot(figure is inactive), Exit successfully
+Press exit while a figure(plot) is active, Exit successfully
