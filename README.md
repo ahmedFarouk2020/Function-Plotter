@@ -51,4 +51,4 @@ A GUI program that plots arbitrary user-entered function
    python test.py
    ```
    
-## Snapshots of application -- in --> `snapshots dir` (all run as expected)
+### Snapshots of application -- in --> `snapshots dir` (all run as expected)
